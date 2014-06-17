@@ -22,9 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="lunch-rs" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="lunch-rs" target="1.7" />
       <module name="lunches-rs" target="1.7" />
     </bytecodeTargetLevel>
   </component>
