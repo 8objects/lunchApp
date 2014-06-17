@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lunch-rs/lunch-rs.iml" filepath="$PROJECT_DIR$/lunch-rs/lunch-rs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lunch-web/lunch-web.iml" filepath="$PROJECT_DIR$/lunch-web/lunch-web.iml" />
+    </modules>
+  </component>
+</project>
+

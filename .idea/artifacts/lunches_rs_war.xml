@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="lunches-rs:war">
+    <output-path>$PROJECT_DIR$/../lunches-rs/target</output-path>
+    <root id="archive" name="lunchesrs.war">
+      <element id="artifact" artifact-name="lunches-rs:war exploded" />
+    </root>
+  </artifact>
+</component>
