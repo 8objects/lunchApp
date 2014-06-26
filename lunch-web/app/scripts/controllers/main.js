@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('lunchWebApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('LoginCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+    $scope.text = 'test';
   });

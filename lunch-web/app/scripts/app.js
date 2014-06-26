@@ -4,15 +4,13 @@ angular.module('lunchWebApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ui.router'
 ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
+  .config(function ($stateProvider) {
+    $stateProvider
+      .state('login', {
+        url: '/',
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
       });
   });
