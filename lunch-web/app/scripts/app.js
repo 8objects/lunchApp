@@ -1,12 +1,15 @@
 'use strict';
 
-angular.module('lunchWebApp', [
+var app = angular.module('lunchWebApp', [
+  'lunchWebApp-services',
+  'lunchWebApp-controllers',
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ui.router'
-])
-  .config(function ($stateProvider) {
+]);
+
+app.config(function ($stateProvider) {
     $stateProvider
       .state('login', {
         url: '/',
