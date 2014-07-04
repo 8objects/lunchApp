@@ -1,8 +1,9 @@
 'use strict';
 
-var app = angular.module('lunchWebApp', [
-  'lunchWebApp-services',
-  'lunchWebApp-controllers',
+var app = angular.module('lunchApp', [
+  'lunchApp-services',
+  'lunchApp-controllers',
+  'lunchApp-main',
   'ngCookies',
   'ngResource',
   'ngSanitize',

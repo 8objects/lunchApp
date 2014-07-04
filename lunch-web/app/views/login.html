@@ -7,10 +7,10 @@
             <ul class="slides">
                 <fieldset>
                     <div class="formRow">
-                        <div class="textField"><input type="text" name="contact-name" id="name" placeholder="Login ..." /></div>
+                        <div class="textField"><input ng-model="username" type="text" name="contact-name" id="name" placeholder="Login ..." /></div>
                     </div
                     <div class="formRow">
-                        <div class="textField"><input type="password" name="contact-name" id="password" placeholder="Password ..." /></div>
+                        <div class="textField"><input ng-model="password" type="password" name="contact-name" id="password" placeholder="Password ..." /></div>
                     </div
                 </fieldset>
 
@@ -18,9 +18,9 @@
             </ul>
         </div>
         <div class="buttons">
-            <button class="btn btnGreen"><span>Login</span></button>
+            <button class="btn btnGreen" ng-click="login()"><span>Login</span></button>
             <span><em>or</em></span>
-            <button class="btn btnBlue" ng-click="login"><span>Forgot Password</span></button>
+            <button class="btn btnBlue" ng-click="forgotpasswotd()"><span>Forgot Password</span></button>
         </div>
     </form>
 </div>
