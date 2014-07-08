@@ -4,20 +4,22 @@
  */
 var app = angular.module('lunchApp-controllers', []);
 
-app.controller('LoginCtrl', ['$scope', 'LoginSrv', function ($scope, LoginSrv) {
+app.controller('LoginCtrl', ['$scope','$state', 'LoginSrv', function ($scope,$state, LoginSrv) {
   $scope.text = ' test';
 
   $scope.login = function () {
-    $scope.text = ' login invkoed';
-    LoginSrv.get({},function(success){
-      $scope.text = success.token;
-    },function(error){
+    //$log.info('login invoked');
+    LoginSrv.get({username: $scope.username, password: $scope.password}, function (success) {
+      if(success.status === 'OK'){
+        $state.transitionTo('menu');
+      }
+    }, function (error) {
       $scope.text = error;
     });
-    //$scope.text = data.token;
+
   };
 
-  $scope.forgotpasswotd = function(){
+  $scope.forgotpasswotd = function () {
     $scope.text = '';
   };
 }]);

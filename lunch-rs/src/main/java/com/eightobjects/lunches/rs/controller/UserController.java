@@ -2,6 +2,7 @@ package com.eightobjects.lunches.rs.controller;
 
 import com.eightobjects.lunches.rs.dto.LoginDto;
 import com.eightobjects.lunches.rs.dto.UserDto;
+import com.eightobjects.lunches.rs.status.LoginStatus;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,10 @@ public class UserController {
     @RequestMapping(value="/login/{userName}/{password}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public LoginDto login(String userName, String password){
-        return null;
+        LoginDto user = new LoginDto();
+        user.setToken("ASdad");
+        user.setStatus(LoginStatus.OK);
+        return user;
     }
 
     @ResponseBody

@@ -4,6 +4,7 @@ var app = angular.module('lunchApp', [
   'lunchApp-services',
   'lunchApp-controllers',
   'lunchApp-main',
+  'lunchApp-menu',
   'ngCookies',
   'ngResource',
   'ngSanitize',
@@ -11,10 +12,15 @@ var app = angular.module('lunchApp', [
 ]);
 
 app.config(function ($stateProvider) {
-    $stateProvider
-      .state('login', {
-        url: '/',
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
-      });
-  });
+  $stateProvider
+    .state('login', {
+      url: '/',
+      templateUrl: 'views/login.html',
+      controller: 'LoginCtrl'
+    })
+    .state('menu', {
+      url: '/menu',
+      templateUrl: 'views/menu.html',
+      controller: 'MenuCtrl'
+    });
+});

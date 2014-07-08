@@ -5,6 +5,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * User: maciek
  * Date: 09.06.2014
@@ -23,4 +26,17 @@ public class LunchController {
         return lunch;
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/listEvents/{id}", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public LunchDto[] listEvents(@PathVariable Long id){
+        List<LunchDto> list = new ArrayList<LunchDto>();
+
+        LunchDto lunch = new LunchDto();
+
+        lunch.setId(3423);
+        lunch.setName("sdfsdf");
+        list.add(lunch);
+        return (LunchDto[]) list.toArray();
+    }
 }
