@@ -9,14 +9,23 @@ app.controller('LoginCtrl', ['$scope','$state', 'LoginSrv', function ($scope,$st
 
   $scope.login = function () {
     //$log.info('login invoked');
-    LoginSrv.get({username: $scope.username, password: $scope.password}, function (success) {
+    var User = LoginSrv.login();
+    User.get($scope.credentials).$promise.then(
+      function(success){
+        if(success.status === 'OK'){
+
+          $state.transitionTo('menu');
+        }
+      }
+    );
+    /**.get({},function (success) {
       if(success.status === 'OK'){
         $state.transitionTo('menu');
       }
     }, function (error) {
       $scope.text = error;
     });
-
+    **/
   };
 
   $scope.forgotpasswotd = function () {
