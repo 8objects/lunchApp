@@ -1,5 +1,6 @@
 <div class="center">
 					<h1>Lunch App</h1>
+    <h2> {{text}}<h2>
                     <button ng-click="myEvents()" class="btn btnBlue" name="myEvents"><span>my Events</span></button>
 
                     <button ng-click="newEvent()" class="btn btnBlue" name="newEvent"><span>new Event</span></button>
@@ -7,6 +8,11 @@
 					<div class="columns">
 						<div class="half">
 							<h2>Upcomming events</h2>
+                            <div ng-repeat="event in data.events">
+                                <h4><span>Event: {{event.name}} located in {{event.location}}</span></h4>
+
+
+                            </div>
 						</div>
 
 					</div>
