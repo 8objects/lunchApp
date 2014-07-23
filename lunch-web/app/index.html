@@ -29,6 +29,7 @@
     <div ng-controller="MainCtrl">
         {{text}}
     <!-- Add your site or application content here -->
+        <div><h2><span>loggedUser {{user.data.token}}</span></h2></div>
     <div class="container" ui-view></div>
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -63,11 +64,12 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
 
-        <script src="scripts/controllers/loginCtrl.js"></script>
-        <script src="scripts/controllers/mainCtrl.js"></script>
-        <script src="scripts/controllers/menuCtrl.js"></script>
-        <script src="scripts/services/loginSrv.js"></script>
-    <script src="scripts/services/lunchSrv.js"></script>
+        <script src="scripts/controller/loginCtrl.js"></script>
+        <script src="scripts/controller/mainCtrl.js"></script>
+        <script src="scripts/controller/menuCtrl.js"></script>
+        <script src="scripts/factory/loginSrv.js"></script>
+        <script src="scripts/factory/lunchSrv.js"></script>
+    <script src="scripts/service/loggedUser.js"></script>
         <!-- endbuild -->
 </body>
 </html>

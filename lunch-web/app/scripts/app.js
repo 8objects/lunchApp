@@ -6,6 +6,7 @@ var app = angular.module('lunchApp', [
   'lunchApp-main',
   'lunchApp-menu',
   'lunchApp-lunches',
+  'lunchApp-loggeduser',
   'ngCookies',
   'ngResource',
   'ngSanitize',

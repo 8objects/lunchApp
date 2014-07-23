@@ -4,7 +4,7 @@
  */
 var app = angular.module('lunchApp-controllers', []);
 
-app.controller('LoginCtrl', ['$scope','$state', 'LoginSrv', function ($scope,$state, LoginSrv) {
+app.controller('LoginCtrl', ['$scope','$state', 'LoginSrv','loggeduser', function ($scope,$state, LoginSrv, LoggedUser) {
   $scope.text = ' test';
 
   $scope.login = function () {
@@ -13,7 +13,8 @@ app.controller('LoginCtrl', ['$scope','$state', 'LoginSrv', function ($scope,$st
     User.get($scope.credentials).$promise.then(
       function(success){
         if(success.status === 'OK'){
-
+          console.log(success);
+          LoggedUser.setUser(success);
           $state.transitionTo('menu');
         }
       }
