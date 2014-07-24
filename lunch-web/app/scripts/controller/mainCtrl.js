@@ -4,17 +4,24 @@
  */
 var app = angular.module('lunchApp-main', []);
 
-app.controller('MainCtrl', ['loggeduser','$scope','$rootScope',function ($scope,$rootscope, LoggedUser) {
-  $scope.text = 'adas ';
+app.controller('MainCtrl', ['$scope','$rootScope','LoggedUser',function ($scope,$rootscope, LoggedUser) {
+  $scope.user = {
+    data : null,
+    isLogged : false
+  };
 
-  $rootscope.$on('user.update', function(event,data){
-    console.log('loggeduser.on.user.update invoked');
+  $scope.logout = function(){
+    console.log('MainCtrl.logout invoked');
+    LoggedUser.logout();
+  };
+
+  $rootscope.$on('user.update', function(event){
+    console.log('MainCtrl.on.user.update invoked');
     console.log(event);
-    console.log(data);
-    console.log(LoggedUser);
-    console.log(LoggedUser.loggedUser);
     $scope.user = {};
     $scope.user.isLogged = LoggedUser.isLogged;
     $scope.user.data = LoggedUser.loggedUser;
   });
+
+
 }]);

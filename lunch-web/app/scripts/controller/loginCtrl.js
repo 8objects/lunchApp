@@ -4,7 +4,7 @@
  */
 var app = angular.module('lunchApp-controllers', []);
 
-app.controller('LoginCtrl', ['$scope','$state', 'LoginSrv','loggeduser', function ($scope,$state, LoginSrv, LoggedUser) {
+app.controller('LoginCtrl', ['$scope','$state', 'LoginSrv','LoggedUser', function ($scope,$state, LoginSrv, LoggedUser) {
   $scope.text = ' test';
 
   $scope.login = function () {

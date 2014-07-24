@@ -29,7 +29,7 @@
     <div ng-controller="MainCtrl">
         {{text}}
     <!-- Add your site or application content here -->
-        <div><h2><span>loggedUser {{user.data.token}}</span></h2></div>
+        <div ng-show="user.isLogged"><h2><span>loggedUser {{user.data.token}}</span> <button ng-click="logout()"><span>logout</span></button> </h2></div>
     <div class="container" ui-view></div>
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

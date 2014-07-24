@@ -4,28 +4,33 @@
  */
 var app = angular.module('lunchApp-loggeduser', []);
 
-app.service('loggeduser', ['$rootScope', function ($rootScope) {
-  var service = {};
-  service.loggedUser = {};
-  service.isLogged = false;
+app.service('LoggedUser', ['$rootScope', function ($rootScope) {
 
-  service.setUser = function(user)
-  {
+  this.loggedUser = {};
+
+  this.isLogged = function () {
+    return this.isLogged;
+  };
+
+  this.getLoggedUser = function () {
+    return this.loggedUser;
+  };
+
+  this.setUser = function (user) {
     console.log('loggeduser.setUser invoked');
     console.log(user);
-    service.loggedUser = user;
-    service.isLogged = true;
-    console.log(service.loggedUser);
+    this.loggedUser = user;
+    this.isLogged = true;
+    console.log(this.loggedUser);
     $rootScope.$broadcast('user.update', user);
   };
 
-  service.logout = function()
-  {
+  this.logout = function () {
     console.log('loggeduser.logout');
-    service.loggedUser = null;
-    service.isLogged = false;
-    $rootScope.broadcast('user.update', null);
+    this.loggedUser = null;
+    this.isLogged = false;
+    $rootScope.$broadcast('user.update', null);
   };
 
-  return service;
+  return this;
 }]);
