@@ -79,4 +79,10 @@ public class LunchController {
         return null;
     }
 
+    @ResponseBody
+    @RequestMapping(value="/{lunchId}/contacts", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public ContactDto[] getLunchContacts(@PathVariable String lunchId, @PathVariable String id){
+        return null;
+    }
 }
