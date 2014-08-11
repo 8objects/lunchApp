@@ -2,13 +2,11 @@ package com.eightobjects.lunches.rs.controller;
 
 import com.eightobjects.lunches.rs.dto.LoginDto;
 import com.eightobjects.lunches.rs.dto.UserDto;
+import com.eightobjects.lunches.rs.dto.UserRegisterDTO;
 import com.eightobjects.lunches.rs.status.LoginStatus;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by Adam on 2014-06-12.
@@ -28,16 +26,34 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping(value="/getUser/{token}", method = RequestMethod.GET)
+    @RequestMapping(value="/changePassword/{userId}/{oldPassword}/{password}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.OK)
-    public UserDto getUser(String token){
+    public UserDto changePassword(String userId,String oldPassword, String password){
+        UserDto user = new UserDto();
+
+        return user;
+    }
+
+    @ResponseBody
+    @RequestMapping(value="/register/", method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.OK)
+    public UserDto register(@RequestBody UserRegisterDTO registerUser){
+        UserDto user = new UserDto();
+
+        return user;
+    }
+
+    @ResponseBody
+    @RequestMapping(value="/{userId}", method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.OK)
+    public UserDto updateUser(String userId, UserDto user){
         return null;
     }
 
     @ResponseBody
-    @RequestMapping(value="/updateUser/{token}/{user}", method = RequestMethod.GET)
+    @RequestMapping(value="/{userId}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public UserDto updateUser(String token, UserDto user){
+    public UserDto getUser(@PathVariable String userId){
         return null;
     }
 
