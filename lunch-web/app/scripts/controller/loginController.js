@@ -2,19 +2,19 @@
 /**
  * Created by Adam on 2014-07-04.
  */
-var app = angular.module('lunchApp-controllers', []);
+var app = angular.module('app-controllers');
 
-app.controller('LoginCtrl', ['$scope','$state', 'LoginSrv','LoggedUser', function ($scope,$state, LoginSrv, LoggedUser) {
+app.controller('loginController', ['$scope','$state', 'loginFactory','loggedUser', function ($scope,$state, loginFactory, loggedUser) {
   $scope.text = ' test';
 
   $scope.login = function () {
     //$log.info('login invoked');
-    var User = LoginSrv.login();
+    var User = loginFactory.login();
     User.get($scope.credentials).$promise.then(
       function(success){
         if(success.status === 'OK'){
           console.log(success);
-          LoggedUser.setUser(success);
+          loggedUser.setUser(success);
           $state.transitionTo('menu');
         }
       }

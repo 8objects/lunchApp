@@ -1,8 +1,8 @@
 'use strict';
 
-var app = angular.module('lunchApp-services', ['ngResource']);
+var app = angular.module('app-factories');
 
-app.factory('LoginSrv', function ($resource ) {
+app.factory('loginFactory', function ($resource ) {
 
   var loginSrv = {};
 

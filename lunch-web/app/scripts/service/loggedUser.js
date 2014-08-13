@@ -2,9 +2,9 @@
 /**
  * Created by Adam on 2014-07-23.
  */
-var app = angular.module('lunchApp-loggeduser', []);
+var app = angular.module('app-services', []);
 
-app.service('LoggedUser', ['$rootScope', function ($rootScope) {
+app.service('loggedUser', ['$rootScope', function ($rootScope) {
 
   this.loggedUser = {};
 

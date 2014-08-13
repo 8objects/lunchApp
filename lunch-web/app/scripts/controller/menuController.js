@@ -2,18 +2,18 @@
 /**
  * Created by Adam on 08.07.14.
  */
-var app = angular.module('lunchApp-menu', []);
+var app = angular.module('app-controllers');
 
-app.controller('MenuCtrl', ['$scope','LunchSrv', function ($scope, LunchSrv) {
+app.controller('menuController', ['$scope','lunchFactory', function ($scope, lunchFactory) {
   $scope.text = 'Menu Ctrl';
   $scope.data = {};
-  LunchSrv.get({},function(success){
+  lunchFactory.post({},function(success){
     $scope.data.events = success;
 
   });
 
   $scope.myEvents = function(){
-    LunchSrv.get({},function(success){
+    lunchFactory.post({},function(success){
       $scope.data.events = success;
 
     });

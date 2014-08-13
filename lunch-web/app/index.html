@@ -26,7 +26,7 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div ng-controller="MainCtrl">
+    <div ng-controller="mainController">
         {{text}}
     <!-- Add your site or application content here -->
         <div ng-show="user.isLogged"><h2><span>loggedUser {{user.data.token}}</span> <button ng-click="logout()"><span>logout</span></button> </h2></div>
@@ -63,12 +63,14 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/controller/ctrl.js"></script>
+        <script src="scripts/controller/loginController.js"></script>
+        <script src="scripts/controller/mainController.js"></script>
+        <script src="scripts/controller/menuController.js"></script>
 
-        <script src="scripts/controller/loginCtrl.js"></script>
-        <script src="scripts/controller/mainCtrl.js"></script>
-        <script src="scripts/controller/menuCtrl.js"></script>
-        <script src="scripts/factory/loginSrv.js"></script>
-        <script src="scripts/factory/lunchSrv.js"></script>
+        <script src="scripts/factory/factory.js"></script>
+        <script src="scripts/factory/loginFactory.js"></script>
+        <script src="scripts/factory/lunchFactory.js"></script>
     <script src="scripts/service/loggedUser.js"></script>
         <!-- endbuild -->
 </body>

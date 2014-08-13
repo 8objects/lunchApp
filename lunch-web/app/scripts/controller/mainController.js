@@ -2,9 +2,9 @@
 /**
  * Created by Adam on 2014-07-04.
  */
-var app = angular.module('lunchApp-main', []);
+var app = angular.module('app-controllers');
 
-app.controller('MainCtrl', ['$scope','$rootScope','LoggedUser',function ($scope,$rootscope, LoggedUser) {
+app.controller('mainController', ['$scope','$rootScope','loggedUser',function ($scope,$rootscope, loggedUser) {
   $scope.user = {
     data : null,
     isLogged : false
@@ -12,15 +12,15 @@ app.controller('MainCtrl', ['$scope','$rootScope','LoggedUser',function ($scope,
 
   $scope.logout = function(){
     console.log('MainCtrl.logout invoked');
-    LoggedUser.logout();
+    loggedUser.logout();
   };
 
   $rootscope.$on('user.update', function(event){
     console.log('MainCtrl.on.user.update invoked');
     console.log(event);
     $scope.user = {};
-    $scope.user.isLogged = LoggedUser.isLogged;
-    $scope.user.data = LoggedUser.loggedUser;
+    $scope.user.isLogged = loggedUser.isLogged;
+    $scope.user.data = loggedUser.loggedUser;
   });
 
 
